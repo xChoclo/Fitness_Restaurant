@@ -8,7 +8,7 @@ const app =  express()
 app.use(express.json()); // Permitir JSON en las peticiones
 
 app.get('', (req,res)=>{
-    res.write("welcome.");
+    res.write("Hola mundo.");
     res.end();
 })
 
@@ -23,5 +23,5 @@ app.get('/clientes', async (req, res) => {
 
 
 // 🚀 Iniciar el servidor
-const PORT = 8080;
+const PORT = 8090;
 app.listen(PORT, () => console.log(`Servidor corriendo en http://localhost:${PORT}`));
