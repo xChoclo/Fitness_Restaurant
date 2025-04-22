@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require('../db');
 
 const ClienteSchema = new mongoose.Schema({
     edad: Number,
@@ -7,7 +7,7 @@ const ClienteSchema = new mongoose.Schema({
     objetivo: String,
     preferencias: String,
     observaciones: String
-}, { collection: 'FitnessRestaurant.Clientes' });
+}, {versionKey: false});
 
 const Cliente = mongoose.model('Cliente', ClienteSchema);
 
