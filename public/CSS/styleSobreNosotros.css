@@ -1,0 +1,359 @@
+/* Estilos sobre nosotros - Completamente Rediseñado */
+.about-us {
+  background-color: #ffffff;
+  padding: 120px 20px 80px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 80px;
+}
+
+/* Elementos decorativos de fondo */
+.about-us::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  background-color: rgba(27, 156, 133, 0.05);
+  border-radius: 50%;
+  transform: translate(100px, -150px);
+  z-index: 0;
+}
+
+.about-us::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  background-color: rgba(27, 156, 133, 0.05);
+  border-radius: 50%;
+  transform: translate(-50px, 50px);
+  z-index: 0;
+}
+
+/* Título principal con estilo moderno */
+.about-us h2 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #111111;
+  margin-bottom: 60px;
+  text-align: center;
+  letter-spacing: -1px;
+  position: relative;
+  z-index: 1;
+}
+
+.about-us h2 span {
+  color: #1B9C85;
+  position: relative;
+  display: inline-block;
+}
+
+.about-us h2 span::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: rgba(27, 156, 133, 0.2);
+  z-index: -1;
+}
+
+/* Nuevo contenedor con layout moderno */
+.containerSobre {
+  max-width: 1300px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* Sección de contenido */
+.contentSobre {
+  padding: 0;
+}
+
+.contentSobre h3 {
+  font-size: 2rem;
+  color: #1B9C85;
+  margin-bottom: 25px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.contentSobre p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+/* Nuevo estilo de tarjetas para la filosofía */
+.philosophy-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.philosophy-card {
+  background-color: #f9f9f9;
+  padding: 25px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.philosophy-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  background-color: #ffffff;
+}
+
+.philosophy-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 0;
+  background-color: #1B9C85;
+  transition: height 0.3s ease;
+}
+
+.philosophy-card:hover::before {
+  height: 100%;
+}
+
+.philosophy-card h4 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #333;
+  font-weight: 600;
+  padding-left: 35px;
+  position: relative;
+}
+
+.philosophy-card h4 span {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+}
+
+.philosophy-card p {
+  margin-bottom: 0;
+  font-size: 0.95rem;
+}
+
+/* Tarjetas de servicios */
+.services-cards {
+  display: flex;
+  gap: 15px;
+  margin: 40px 0;
+}
+
+.service-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px 15px;
+  text-align: center;
+  flex: 1;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f0f0f0;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  border-color: rgba(27, 156, 133, 0.3);
+}
+
+.service-card span {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.service-card h4 {
+  font-size: 1rem;
+  color: #333;
+  margin: 0;
+}
+
+/* Contenedor de equipo */
+.team-container {
+  position: relative;
+  height: 450px;
+}
+
+.team-member {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  border: 5px solid #ffffff;
+}
+
+.team-member img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-member:nth-child(1) {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.team-member:nth-child(2) {
+  top: 190px;
+  left: 0;
+  z-index: 2;
+}
+
+.team-member:nth-child(3) {
+  top: 190px;
+  right: 0;
+  z-index: 2;
+}
+
+.team-member:hover {
+  transform: scale(1.1);
+  box-shadow: 0 15px 35px rgba(27, 156, 133, 0.25);
+  border-color: #1B9C85;
+  z-index: 4;
+}
+
+.team-member:nth-child(1):hover {
+  transform: translateX(-50%) scale(1.1);
+}
+
+.team-bg {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  background-color: rgba(27, 156, 133, 0.05);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Responsividad */
+@media (max-width: 992px) {
+  .about-us {
+      padding: 100px 30px 70px;
+  }
+  
+  .about-us h2 {
+      font-size: 3rem;
+  }
+  
+  .containerSobre {
+      gap: 60px;
+  }
+  
+  .philosophy-cards {
+      gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .containerSobre {
+      grid-template-columns: 1fr;
+      gap: 60px;
+  }
+  
+  .team-container {
+      order: -1;
+      height: 400px;
+      margin-bottom: 30px;
+  }
+  
+  .team-member {
+      width: 150px;
+      height: 150px;
+  }
+  
+  .team-member:nth-child(2) {
+      top: 160px;
+  }
+  
+  .team-member:nth-child(3) {
+      top: 160px;
+  }
+  
+  .team-bg {
+      width: 250px;
+      height: 250px;
+  }
+  
+  .about-us h2 {
+      font-size: 2.8rem;
+      margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-us {
+      padding: 80px 20px 50px;
+  }
+  
+  .about-us h2 {
+      font-size: 2.3rem;
+  }
+  
+  .contentSobre h3 {
+      font-size: 1.8rem;
+  }
+  
+  .philosophy-cards {
+      grid-template-columns: 1fr;
+  }
+  
+  .services-cards {
+      flex-direction: column;
+  }
+  
+  .team-container {
+      height: 360px;
+  }
+  
+  .team-member {
+      width: 130px;
+      height: 130px;
+  }
+  
+  .team-member:nth-child(2) {
+      top: 140px;
+      left: 10px;
+  }
+  
+  .team-member:nth-child(3) {
+      top: 140px;
+      right: 10px;
+  }
+  
+  .team-bg {
+      width: 200px;
+      height: 200px;
+  }
+}

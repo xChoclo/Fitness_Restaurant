@@ -1,0 +1,294 @@
+/* Reset de márgenes y paddings */
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+a{
+    color: var(--color-dark);
+}
+
+.contenedor{
+    display: flex;
+    height: 100vh;
+    flex: 1;
+}
+
+
+
+
+.left-side {
+    flex: 1;
+    display: flex;
+    position: relative; 
+}
+
+
+.bgHamburguesa {
+    width: 100% !important;
+    height: auto; 
+    object-fit: cover; 
+    position: relative; 
+    left: -20;
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+
+    width: 25%;
+    height: auto; 
+
+    
+}
+
+/* aqui empieza el codigo para el formulario*/
+
+.right-side {
+    flex: 1;
+    background: linear-gradient(180deg,  #000000, #10C38F); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: all 0.3s ease;
+
+}
+
+.Bienvenido{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 25px;
+    padding-top: 10%;
+}
+
+.contenedorFormulario {
+    width: 50%;
+    height: auto;
+    padding: 2% 2% 2% 2%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+
+.formulario {
+    width: 100%; 
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+
+.switch{
+    width: 100% ;
+    height: 83px;
+    position: relative;
+    display: block;
+    background-color: #2c2c2c;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+ .switch:after{
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    content: "Log In";
+    width: 50%;
+    height: 83px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #10C38F;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.selector{
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+
+
+.selector:checked + .switch:after{
+    transform: translateX(+100%);
+    content: "Sig in";
+    transition: all 0.3s ease;
+}
+ 
+
+
+
+
+.input.ultimo {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+.selector:checked ~ .formulario .olvidar{
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    margin: 0;
+    transition: all 0.3s ease;
+
+}
+
+.selector:checked ~ .formulario .terminos{
+    max-height: 50px; 
+    overflow: visible;
+    opacity: 1;
+
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #000000;
+    transition: all 0.3s ease;
+}
+
+.selector:checked ~ .formulario .input.ultimo {
+    max-height: 50px; 
+    overflow: visible;
+    opacity: 1;
+    align-items: center;
+    margin: 45px 0;
+    transition: all 0.3s ease;
+}
+
+.terminos{
+    display: flex;
+    justify-content: center;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+
+.input{
+    width: 100%;
+    position: relative;
+    margin: 45px 0;
+    border: none;
+    border-bottom: 1px solid #979797;
+    transition: all 0.3s ease;
+}
+
+
+ 
+.input input{
+    width: 100%;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 22px;
+    font-weight: 600px;
+    transition: all 0.3s ease;
+}
+
+.input::placeholder{
+    padding-left: 10px;
+}
+
+
+.olvidar{
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s ease;
+
+}
+
+
+.olvidar a:hover{
+    text-decoration: underline;
+    transition: all 0.3s ease;
+}
+
+.loginButton {
+    width: 100%;
+    height: 83px;
+    border-radius: 50px;
+    border: none;
+    background-color: #10C38F;
+    margin-top: 45px; 
+    position: relative;
+    top: 9%;
+    font-size: 28px;
+}
+
+button{
+color: white;
+font-size: 1.2rem;
+cursor: pointer;
+}
+
+#toast-container {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast {
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    animation: fadeInOut 4s ease forwards;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos según el tipo de mensaje */
+.toast-success {
+    background-color: #28a745;
+}
+.toast-error {
+    background-color: #dc3545;
+}
+.toast-warning {
+    background-color: #ffc107;
+    color: black;
+}
+.toast-info {
+    background-color: #17a2b8;
+}
+
+/* Animación para que desaparezca solo */
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(-20px); }
+    10% { opacity: 1; transform: translateY(0); }
+    90% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(-20px); display: none; }
+}

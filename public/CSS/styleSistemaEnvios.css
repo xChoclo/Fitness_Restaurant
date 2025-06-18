@@ -1,0 +1,97 @@
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: #f1fdf9;
+  padding: 30px;
+  margin-top: 150px;
+}
+
+.container {
+  margin-top: 200px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h1, h2 {
+  color: #000000;
+  text-align: center;
+}
+
+.formulario {
+  background: #ffffff;
+  padding: 30px;
+  margin: 30px 0;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+form input, form select {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+form button {
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  background-color: #FF5E5E;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+form button:hover {
+  background-color: #0ea07e;
+}
+
+.input:focus{
+  outline: none;
+  border-color: #FF5E5E;
+}
+
+.tabla-envios {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #FF5E5E;
+  color: white;
+}
+
+.estado {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.pendiente {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.entregado {
+  background-color: #d4edda;
+  color: #155724;
+}

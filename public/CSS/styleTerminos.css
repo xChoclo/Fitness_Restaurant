@@ -1,0 +1,197 @@
+/* Estilo general */
+body {
+  background-image: url('{% static "imagenes/fondo_marmol.jpg" %}');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: 'Nunito', sans-serif;
+  color: #2C2C2C;
+  margin: 0;
+  padding: 0;
+}
+
+/* Contenedor principal */
+.container {
+  max-width: 80%;
+  margin: 40px auto;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Imagen de portada */
+.imagenTerminos {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Título principal */
+.tituloPagina {
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #070808;
+}
+
+/* Fecha de actualización */
+.actualizacion {
+  text-align: center;
+  font-size: 14px;
+  color: #979797;
+  margin-bottom: 20px;
+}
+
+/* Secciones de contenido */
+p {
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+/* Subtítulos */
+.subtitulo1, .subtitulo2, .subtitulo3, .subtitulo4, .subtitulo5 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #000000;
+  margin-top: 30px;
+  border-left: 5px solid #10C38F;
+  padding-left: 10px;
+ 
+}
+
+/* Listas */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  padding-left: 20px;
+  position: relative;
+}
+
+ul li::before {
+  content: "✔";
+  color: #242525;
+  position: absolute;
+  left: 0;
+}
+/* Estilo general */
+body {
+  background-image: url('{% static "imagenes/fondo_marmol.jpg" %}');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: 'Nunito', sans-serif;
+  color: #2C2C2C;
+  margin: 0;
+  padding: 0;
+}
+
+/* Contenedor principal */
+.container {
+  max-width: 80%;
+  margin: 40px auto;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Imagen de portada */
+.imagenTerminos {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Título principal */
+.tituloPagina {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #070808;
+}
+
+/* Fecha de actualización */
+.actualizacion {
+  text-align: center;
+  font-size: 14px;
+  color: #979797;
+  margin-bottom: 20px;
+}
+
+/* Secciones de contenido */
+p {
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+/* Subtítulos */
+.subtitulo1, .subtitulo2, .subtitulo3, .subtitulo4, .subtitulo5 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000000;
+  margin-top: 30px;
+  border-left: 5px solid #10C38F;
+  padding-left: 10px;
+  
+}
+
+/* Listas */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  padding-left: 20px;
+  position: relative;
+}
+
+ul li::before {
+  content: "✔";
+  color: #242525;
+  position: absolute;
+  left: 0;
+}
+
+/* Sección de aceptación */
+.aceptacion {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 30px;
+  background-color: #10C38F;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.aceptacion a {
+  color: white;
+}
+
+/* Responsividad */
+@media screen and (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  p, ul li, ol li {
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,44 @@
+body {
+    font-family: 'Nunito', sans-serif;
+    padding: 10rem;
+    color: var(--color-dark);
+}
+
+.containerGeneral {
+    padding: 1px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2c3e50;
+}
+
+.formularioGeneral{
+    background-color: var(--color-white);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+select {
+    width: 90%;
+    height: 40px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+select:focus {
+    outline: none;
+}
+
+label {
+    font-size: 15px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    color: var(--color-dark);
+}

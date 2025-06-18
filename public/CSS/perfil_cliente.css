@@ -1,0 +1,157 @@
+
+
+.body-cliente{
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.88rem;
+    user-select: none;
+    overflow-x: hidden;
+    color: var(--color-dark);
+    background-color: var(--color-background-variant);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}   
+
+
+img{
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+h1{
+    font-weight: 800;
+    font-size: 1.8rem;
+    color: var(--color-white);
+}
+
+h2{
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+h3{
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+
+.contenedor-perfil{
+    width: 50%;
+    margin: 150px 0 150px 0;
+}
+.contenedor-perfil span{
+    color: var(--color-white);
+}
+
+
+.encabezado{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    /* background-color: var(--color-dark-variant);
+    box-shadow: var(--box-shadow); */
+    border-radius: var(--border-radius-2);
+    padding: var(--card-padding);
+    transition: all 0.3s ease;
+    
+}
+.encabezado:hover{
+    box-shadow: none;
+}
+
+.encabezado .contenedor{
+    display: flex;
+    gap: 1.5rem;
+}
+
+.encabezado .contenedor .foto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    flex-direction: column;
+    font-size: 0.7rem;
+}
+
+.encabezado .contenedor p{
+    color:  var(--color-info-dark);
+}
+
+.encabezado .contenedor .dialogo{
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    color: var(--color-white);
+}
+
+
+.encabezado .contenedor .foto img{
+    border-radius: 50%;
+}
+
+.encabezado .contenedor .foto img{
+    width: 5rem;
+    height: 5rem;
+}
+
+aside{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-dark-variant);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius-2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+aside:hover{
+    box-shadow: none;
+}
+
+aside .cart{
+    display: flex;
+    justify-content: space-between;
+    padding: var(--card-padding);
+}
+
+
+aside .cart h3{
+    color: var(--color-white);
+}
+
+aside .cart p{
+    color: var(--color-info-dark);
+}
+
+
+.flecha{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+aside .cart .contenedor{
+    display: flex;
+    gap: 1rem;
+}
+
+aside .cart .contenedor .icono{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+aside .cart .contenedor .dialogo{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+aside .cart .contenedor span{
+    font-size: 2rem;
+}  
