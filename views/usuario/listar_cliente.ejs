@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ modo_edicion|yesno:"Actualizar Cliente,Información del Cliente" }}{% endblock %}
+
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'CSS/listar_cliente.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="body-listar-cliente">
+
+    <div class="contenedor-formulario-cliente">
+        <h1>{{ modo_edicion|yesno:"Actualizar Información Personal,Información Personal" }}</h1>
+
+        <form method="post" action="" class="formulario-listar-cliente">
+            {% csrf_token %}
+
+
+            <div class="input">
+                <input type="text" placeholder="Nombre" name="nombre" value="{{ cliente.nombre }}" class="form-control" {% if not modo_edicion %}disabled{% endif %}>
+            </div>
+
+
+            <div class="input">
+                <input type="number" placeholder="Edad" name="edad" value="{{ cliente.edad }}" class="form-control" {% if not modo_edicion %}disabled{% endif %}> 
+            </div>
+           
+        
+            <div class="input">
+                <input type="text" placeholder="Telefono" name="telefono" value="{{ cliente.telefono }}" class="form-control" {% if not modo_edicion %}disabled{% endif %}>
+            </div>
+
+
+            <div class="input">
+                <input type="text" placeholder="Tipo de sangre" name="rh" value="{{ cliente.rh }}" class="form-control" {% if not modo_edicion %}disabled{% endif %}>
+            </div>
+
+            <div class="input">
+                <input type="email" placeholder="Email" name="email" value="{{ cliente.email }}" class="form-control" {% if not modo_edicion %}disabled{% endif %}>
+            </div>
+
+            <div class="input">
+                <input type="number" placeholder="Peso (kg)" step="0.1" name="peso" value="{{ cliente.peso }}" class="form-control" {% if not modo_edicion %}disabled{% endif %}>
+            </div>
+
+            <div class="input">
+                <input type="number" placeholder="Estatura" step="0.01" name="estatura" value="{{ cliente.estatura }}" class="form-control" {% if not modo_edicion %}disabled{% endif %}>    
+            </div>
+            
+            
+            <select placeholder="objetivo" name="objetivo" class="form-select input" {% if not modo_edicion %}disabled{% endif %}>
+                <option value="">Seleccione objetivo</option>
+                {% for id, nombre in cliente.objetivos %}
+                    <option value="{{ id }}" {% if cliente.objetivo == id %}selected{% endif %}>{{ nombre }}</option>
+                {% endfor %}
+            </select>
+            
+            <div class="input">
+                <textarea name="preferencia" placeholder="Preferencia" class="form-control" {% if not modo_edicion %}disabled{% endif %}>{{ cliente.preferencia }}</textarea>
+            </div>
+
+            <div class="input">
+                <textarea name="observaciones" placeholder="Observaciones" class="form-control" {% if not modo_edicion %}disabled{% endif %}>{{ cliente.observaciones }}</textarea>
+            </div>
+           
+
+            {% if modo_edicion %}
+                <button type="submit">Guardar Cambios</button>
+            {% endif %}
+        </form>
+
+
+    </div>
+</main>
+{% endblock %}

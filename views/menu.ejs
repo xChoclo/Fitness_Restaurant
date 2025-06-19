@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'CSS/styleMenu.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="wrapper">
+    <div class="menu-container">
+        {% for i in data %}
+            <div class="contenedoresPlatos">
+                <div class="imgs">
+                    {% if i.foto %}
+                        <img src="{{ i.foto.url }}" alt="{{ i.nombre }}">
+                    {% else %}
+                        <img src="{% static 'img/sin imagen.jpg' %}" alt="Sin imagen disponible">
+                    {% endif %}
+                </div>
+                <p class="nombrePlato">{{ i.nombre }}</p>
+                <div class="precio">
+                    <p >{{ i.precio|intcomma }}</p>
+                </div>
+                
+                <section class="infNutricional">
+                    <ul>
+                        <ul class="top">{{ i.kilocalorias }}</ul>
+                        <ul class="button">Kilocalorias</ul>
+                    </ul>
+                    <ul>
+                        <ul class="top">{{ i.proteinas }}</ul>
+                        <ul class="button">Proteinas</ul>
+                    </ul>
+                    <ul>
+                        <ul class="top">{{ i.kilocalorias }}</ul>
+                        <ul class="button">Carbohidratos</ul>
+                    </ul>
+                    <ul>
+                        <ul class="top">22g</ul>
+                        <ul class="button">Grasas</ul>
+                    </ul>
+                </section>
+                <button type="submit" class="buttonPlatos">¡Pedir!</button>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Carrito de compras (oculto por defecto) -->
+<div id="cart-sidebar" class="cart-sidebar">
+    
+    <!-- Header del carrito -->
+    <div class="headerCarrito">
+        <button id="close-cart">&times;</button>
+        <h2>Carrito</h2>
+    </div>
+    
+    <!-- Contenido del carrito -->
+     <div class="contentCarrito">
+         <div id="cart-items" class="cart-items">
+             <!-- Productos -->
+         </div>
+     </div>
+
+    <!-- Footer del carrito -->
+     <div class="footerCarrito">
+         <div class="baseCheckout">
+             <button id="checkout" class="checkout">Finalizar Compra</button>
+         </div>
+     </div>
+    
+</div>
+
+<!-- Fondo desenfocado cuando se abre el carrito -->
+<div id="overlay" class="overlay"></div>
+
+<!-- Ventana de Confirmación -->
+<div id="confirm-modal" class="confirm-modal">
+    <div class="parrafoConfirmación">
+        <p>¿Seguro que quieres eliminar este plato?</p>
+    </div>
+    <div class="botonesConfirmación">
+        <button id="confirm-yes">Sí</button>
+        <button id="confirm-no">No</button>
+    </div>
+</div>
+
+
+    
+<script src="{% static 'JS/carrito_desplegable.js' %}"></script>
+{% endblock %}

@@ -14,14 +14,14 @@
         <!-- libreria para los sliders -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
         <!-- Conexiones a css's -->
-        <link rel="stylesheet" href="/public/CSS/base.css">
+        <link rel="stylesheet" href="/CSS/base.css">
         
         
     </head>
     <body>
         <header>
             <div class="menu">
-            <a href="{% url 'index' %}"><img src="{% static 'img/logo Blanco.png' %}" class="logo-1" alt="logo"></a>
+            <a href="/"><img src='/img/logo_Blanco.png' class="logo-1" alt="logo"></a>
             <input type="checkbox" id="menu"/>
             <label for="menu">
                 <span class="material-symbols-outlined" class="menu-icono">
@@ -32,8 +32,8 @@
             <nav class="navbar">
                 <div class="menu-1">
                     <ul>
-                        <li><a href="{% url 'index' %}">Inicio</a></li>
-                        <li><a href="{% url 'menu' %}">Menú</a></li>
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="/menu">Menú</a></li>
                         <li>
                             <div class="modo-oscuro">
                                 <span class="material-symbols-outlined active">
@@ -46,7 +46,7 @@
                         </li>
                     </ul>
                 </div>
-                <img src="{% static 'img/logo Blanco.png' %}"  class="logo-2 invertir-en-oscuro">
+                <img src="/img/logo_Blanco.png"  class="logo-2 invertir-en-oscuro">
                 <div class="menu-2">
                         <li>
                             <a id="premium-icon" class="btn-premium">
@@ -58,14 +58,14 @@
                         <div class="separator"></div>
                         {% if sesion_iniciada and rol_usuario == "cliente" %}
                         <li>
-                            <a href="{% url 'perfil_cliente' %}">
+                            <a href="/perfil_cliente">
                                 <span class="material-symbols-outlined">person</span>
                             </a>
                         </li>
                         
                         {% else %}
                         <li>
-                            <a href="{% url 'login' %}?rol=cliente">
+                            <a href="/login?rol=cliente">
                                 <span class="material-symbols-outlined">login</span>
                             </a>
                         </li>
@@ -93,7 +93,7 @@
 
     <div class="contenedor-ia">
         <!-- Floating Chat Icon -->
-        <div id="chatbot-icon"><img src="{% static 'img/robot blanco.png' %}" alt=""></div>
+        <div id="chatbot-icon"><img src="/img/robot blanco.png" alt=""></div>
         <!-- Chatbot Container -->
         <div id="chatbot-container" class="hidden">
             <div id="chatbot-header">
@@ -117,37 +117,36 @@
     <footer class="footer container">
         <!-- Logo y redes sociales -->
         <div class="footer-section logo-social invertir-en-oscuro">
-            <img src="{% static 'img/logo Blanco.png' %}" class="footer-logo">
+            <img src="/img/logo_Blanco.png" class="footer-logo">
             <div class="social-icons ">
-                <a href="#"><img src="{% static 'img/Facebook.png' %}"></a>
-                <a href="#"><img src="{% static 'img/Instagram.png' %}"></a>
-                <a href="#"><img src="{% static 'img/pinterest.png' %}"></a>
+                <a href="#"><img src="/img/Facebook.png"></a>
+                <a href="#"><img src="/img/Instagram.png"></a>
+                <a href="#"><img src="/img/pinterest.png"></a>
             </div>
         </div>
 
         <!-- Enlaces -->
         <div class="footer-section links">
             <ul>
-                <li><a href="{% url 'terminos' %}">Términos y Condiciones</a></li>
-                <li><a href="{% url 'sobre_nosotros' %}">Sobre nosotros</a></li>
-                <li><a href="{% url 'sistema_envios' %}">Sistema de envíos</a></li>
-                <li><a href="{% url 'login' %}?rol=admin">Panel Administrador</a></li>
+                <li><a href="/terminos">Términos y Condiciones</a></li>
+                <li><a href="/sobre_nosotros">Sobre nosotros</a></li>
+                <li><a href="/sistemaEnvios">Sistema de envíos</a></li>
             </ul>
         </div>
 
         <!--  colaboracion -->
         <div class="footer-section collaboration">
-            <img src="{% static 'img/logo Blanco.png' %}"class="logo-collaboration invertir-en-oscuro">
+            <img src="/img/logo_Blanco.png"class="logo-collaboration invertir-en-oscuro">
             <span class="material-symbols-outlined collaboration-x">
                 close
             </span>
-            <img src="{% static 'img/rappi.png' %}" alt="Rappi-Logo" class="rappi-logo invertir-en-oscuro">
+            <img src="/img/rappi.png" alt="Rappi-Logo" class="rappi-logo invertir-en-oscuro">
         </div>
 
     </footer>
 
     
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-    <script src="{% static 'JS/index.js' %}" ></script>
-    <script src="{% static 'JS/chat-bot.js' %}"></script>
+    <script src="/JS/index.js"></script>
+    <script src="JS/chat-bot.js"></script>
 </body>

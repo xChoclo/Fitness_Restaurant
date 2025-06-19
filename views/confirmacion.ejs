@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="confirmacion-container">
+    <div class="confirmacion-box">
+        <h1>¡Pedido Confirmado!</h1>
+        <p>Gracias {{ pedido.nombre }} por tu pedido.</p>
+        
+        <div class="detalles-pedido">
+            <h2>Detalles del pedido:</h2>
+            <p><strong>Número de pedido:</strong> #{{ pedido.id }}</p>
+            <p><strong>Hora de entrega:</strong> {{ pedido.hora_entrega }}</p>
+            <p><strong>Dirección:</strong> {{ pedido.direccion }}</p>
+            
+            <h3>Productos:</h3>
+            <ul>
+                {% for item in pedido.items.all %}
+                <li>{{ item.cantidad }}x {{ item.plato }} - ${{ item.precio }}</li>
+                {% endfor %}
+            </ul>
+            
+            <p class="total"><strong>Total:</strong> ${{ pedido.total }}</p>
+        </div>
+        
+        <p>Tu pedido será entregado en la hora seleccionada. ¡Gracias por elegir Fitness Restaurant!</p>
+        
+        <a href="{% url 'home' %}" class="btn-principal">Volver al inicio</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'CSS/styleClientePremium.css' %}">
+
+    <!-- FUENTE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital@0;1&display=swap" rel="stylesheet">
+</head>
+
+<h1 class="titulo">Seamos premium</h1>
+<div class="containerGeneral">
+    <form action="" method="post" id="formularioGeneral" class="formularioGeneral">
+        {% csrf_token %}
+        
+        <label for="pagos">Métodos de pago:</label>
+        <select name="pagos" id="pagos">
+            <option value="select">Seleccione una opción:</option>
+            <option value="PSE">PSE</option>
+            <option value="tarjetas">Tarjeta de crédito o débito</option>
+        </select>
+
+        <!-- Aquí se incrustan los campos extra -->
+        <div id="formulario_pagos"></div>
+
+        <!-- Botón de pago (inicialmente oculto si quieres) -->
+        <button type="submit" id="button_pagar" style="display: none;">¡Pagar!</button>
+    </form>
+</div>
+
+<script src="{% static 'JS/cliente_premium.js' %}"></script>
+
+{% endblock %}

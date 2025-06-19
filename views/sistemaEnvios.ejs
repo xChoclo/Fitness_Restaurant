@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<link rel="stylesheet" href="{% static 'CSS/styleSistemaEnvios.css' %}">
+
+<html lang="es"> </html>
+<div class="containerSistema">
+    <div class="header">
+        <h2> Crear Nuevo Envío</h2>
+        <p>Completa la información para registrar tu envío</p>
+    </div>
+
+    <div class="form-container">
+
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+
+            <div class="form-group">
+                <label class="form-label" for="{{ form.direccion.id_for_label }}"> {{ form.direccion.label }}</label>
+                <input type="text" name="direccion" class="form-input" id="{{ form.direccion.id_for_label }}
+                " placeholder="Ingresa la dirección de origen" value="{{ form.direccion.value|default:'' }}">
+                {% if form.direccion.errors %}
+                    <div class="form-error">{{ form.direccion.errors.0 }}</div>
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="{{ form.destino.id_for_label }}"> {{ form.destino.label }}</label>
+                <input type="text" name="destino" class="form-input" id="{{ form.destino.id_for_label }}" placeholder=
+                "Ingresa la dirección de destino" value="{{ form.destino.value|default:'' }}">
+                {% if form.destino.errors %}
+                    <div class="form-error">{{ form.destino.errors.0 }}</div>
+                {% endif %}
+            </div>
+
+            <div class="tipo-domicilio">
+                <label class="form-label"> Tipo de domicilio:</label>
+                <div class="radio-group">
+                    {% for radio in form.tipo_de_domicilio %}
+                    <label class="radio-option">
+                        {{ radio.tag }}
+                        <div class="radio-card">
+                            {% if radio.choice_label == "residencial" %}
+                                <span class="radio-icon"></span>
+                                <span class="radio-text">Residencial</span>
+                            {% elif radio.choice_label == "laboral" %}
+                                <span class="radio-icon"></span>
+                                <span class="radio-text">Laboral</span>
+                            {% else %}
+                                <span class="radio-icon"></span>
+                                <span class="radio-text">{{ radio.choice_label }}</span>
+                            {% endif %}
+                        </div>
+                    </label>
+                    {% endfor %}
+                </div>
+                {% if form.tipo_de_domicilio.errors %}
+                    <div class="form-error">{{ form.tipo_de_domicilio.errors.0 }}</div>
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="{{ form.indicaciones.id_for_label }}"> {{ form.indicaciones.label }}</label>
+                <textarea name="indicaciones" class="form-input form-textarea" id="{{ form.indicaciones.id_for_label }}" placeholder="Escribe cualquier indicación especial para la entrega (opcional)">{{ form.indicaciones.value|default:'' }}</textarea>
+                {% if form.indicaciones.errors %}
+                    <div class="form-error">{{ form.indicaciones.errors.0 }}</div>
+                {% endif %}
+            </div>
+
+            <button type="submit" class="submit-button" aria-label="Guardar envío" title="Guardar envío">
+                Guardar Envío
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}

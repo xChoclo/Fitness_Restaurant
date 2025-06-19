@@ -1,0 +1,94 @@
+<link rel="stylesheet" href="/CSS/perfil_cliente.css">
+
+<main class="body-cliente">
+
+    <div class="contenedor-perfil">
+        <h1>Perfil</h1>
+
+        <div class="encabezado">
+                <div class="contenedor">
+                    <div class="foto">
+                        <img src="/img/perfil/usuario.jpeg" alt="">
+                        <p>Actualizar</p>
+                    </div>
+                    <div class="dialogo">
+                        <h2>{{ cliente.nombre }}</h2>
+                        <p>{{ cliente.email }}</p>
+                    </div>
+                </div>
+                <a href="{% url 'cerrar_sesion' %}">
+                    <div class="flecha invertir-en-oscuro">
+                        <span class="material-symbols-outlined invertir-en-oscuro">
+                            logout
+                        </span>
+                    </div>
+                </a>
+        </div>
+
+        <aside>
+
+            <a href="{% url 'listar_cliente' %}" class="cart">
+                <div class="contenedor">
+                    <div class="icono">
+                        <span class="material-symbols-outlined">
+                            settings_accessibility
+                        </span>
+                    </div>
+                    <div class="dialogo">
+                        <h3>Información Personal</h3>
+                        <p>Aquí encontrarás toda tu información personal actualizada</p>
+                    </div>
+                </div>
+                <div class="flecha invertir-en-oscuro">
+                    <span class="material-symbols-outlined invertir-en-oscuro">
+                        arrow_forward_ios
+                    </span>
+                </div>
+            </a>
+
+            <a href="{% url 'actualizar_cliente' %}" class="cart">
+                <div class="contenedor">
+                    <div class="icono invertir-en-oscuro">
+                        <span class="material-symbols-outlined invertir-en-oscuro">
+                            brush
+                        </span>
+                    </div>
+                    <div class="dialogo ">
+                        <h3>Editar perfil</h3>
+                        <p>aqui encontraras toda to informacion personal actualizada</p>
+                    </div>
+                </div>
+                <div class="flecha invertir-en-oscuro">
+                    <span class="material-symbols-outlined invertir-en-oscuro">
+                        arrow_forward_ios
+                    </span>
+                </div>
+            </a>
+
+            <a href="#" class="cart">
+                <div class="contenedor">
+                    <div class="icono invertir-en-oscuro">
+                        <span class="material-symbols-outlined invertir-en-oscuro">
+                            orders
+                        </span>
+                    </div>
+                    <div class="dialogo">
+                        <h3>Pedidos</h3>
+                        <p>Mira el estado de tus pedidos y haz seguimiento de ellos</p>
+                    </div>
+                </div>
+                <div class="flecha invertir-en-oscuro">
+                    <span class="material-symbols-outlined invertir-en-oscuro">
+                        arrow_forward_ios
+                    </span>
+                </div>
+            </a>
+
+
+
+        </aside>
+    </div>
+</main>
+
+{% endblock %}
+

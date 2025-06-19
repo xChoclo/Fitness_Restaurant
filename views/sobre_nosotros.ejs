@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'CSS/styleSobreNosotros.css' %}">
+{% endblock %}
+
+<section class="about-us">
+    <h2>Quiénes <span>Somos</span></h2>
+    
+    <div class="containerSobre">
+        <div class="contentSobre">
+            <h3>En Fitness Restaurant</h3>
+            <p>Queremos hacerte la vida más fácil con comida saludable, deliciosa y lista para disfrutar. Nuestro objetivo es que alcances tus metas fitness sin preocuparte por la preparación de tus comidas.</p>
+            
+            <h3>Nuestra Historia</h3>
+            <p>Tras meses de investigación en nutrición y gastronomía, creamos Fitness Restaurant para ofrecer un servicio que combina comodidad, sabor y salud.</p>
+            
+            <div class="services-cards">
+                <div class="service-card">
+                    <span>🥗</span>
+                    <h4>Pérdida de peso</h4>
+                </div>
+                <div class="service-card">
+                    <span>🍽</span>
+                    <h4>Mantenimiento</h4>
+                </div>
+                <div class="service-card">
+                    <span>💪</span>
+                    <h4>Ganancia muscular</h4>
+                </div>
+            </div>
+            
+            <h3>Nuestra Filosofía</h3>
+            <div class="philosophy-cards">
+                <div class="philosophy-card">
+                    <h4><span>🔹</span> Comida real y saludable</h4>
+                    <p>Sin ultraprocesados ni ingredientes artificiales.</p>
+                </div>
+                <div class="philosophy-card">
+                    <h4><span>🔹</span> Frescura garantizada</h4>
+                    <p>Utilizamos tecnología avanzada de conservación para mantener la calidad de cada plato.</p>
+                </div>
+                <div class="philosophy-card">
+                    <h4><span>🔹</span> Entrega eficiente</h4>
+                    <p>Llevamos tus comidas fitness a la puerta de tu casa.</p>
+                </div>
+                <div class="philosophy-card">
+                    <h4><span>🔹</span> Compromiso con el bienestar</h4>
+                    <p>No solo vendemos comida, promovemos un estilo de vida más saludable.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="team-container">
+            <div class="team-bg"></div>
+            <div class="team-member">
+                <img src="{% static 'img/perfil/alexsobre.png' %}" alt="Alex">
+            </div>
+            <div class="team-member">
+                <img src="{% static 'img/perfil/nicosobre.png' %}" alt="Nico">
+            </div>
+            <div class="team-member">
+                <img src="{% static 'img/perfil/anasobre.png' %}" alt="Ana">
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

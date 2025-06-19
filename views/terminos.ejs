@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'CSS/styleTerminos.css' %}">
+
+    <!-- FUENTE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital@0;1&display=swap" rel="stylesheet">
+</head>
+
+
+</style>
+</head>
+<body>
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <div class="container">
+        <!-- HERO HEADER -->
+        <div class="hero-header">
+            <br> <br> <br> <br> 
+            <h1 class="hero-title">Términos & Condiciones</h1>
+            <p class="hero-subtitle">Fitness Restaurant - Taste And Train</p>
+            <div class="last-update">📅 Actualizado: 14/10/2024</div>
+        </div>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <div class="content-grid">
+            <!-- INFORMACIÓN DE LA EMPRESA -->
+            <div class="card">
+                <span class="card-icon">🏢</span>
+                <h2 class="card-title">Información </h2>
+                <div class="card-content">
+                    <ul class="styled-list">
+                        <li><strong>Nombre:</strong> Fitness Restaurant - Taste And Train</li>
+                        <li><strong>Contacto:</strong> fitness@tasteandtrain.com</li>
+                        <li><strong>Ubicación:</strong> Medellín, Colombia</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SERVICIOS -->
+            <div class="card">
+                <span class="card-icon">🍽️</span>
+                <h2 class="card-title">Uso del servicio</h2>
+                <div class="card-content">
+                    <p>
+                        Fitness Restaurant ofrece servicios de venta de comida fitness, planes de membresía premium con asesoría nutricional, un chatbot de asistencia y un sistema de envíos para domicilios. 
+                        Nuestro objetivo es brindar productos y atención de calidad que apoyen tus objetivos de salud y bienestar.</p>
+                </div>
+            </div>
+
+            <!-- PROCESO DE COMPRA -->
+            <div class="card">
+                <span class="card-icon">🛒</span>
+                <h2 class="card-title">Proceso de Compra</h2>
+                <div class="card-content">
+                    <div class="process-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-text"><strong>Registro:</strong> Crea tu cuenta con datos reales</div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-text"><strong>Selección:</strong> Elige tus platos favoritos</div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-text"><strong>Pago:</strong> Realiza el pago seguro</div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-text"><strong>Entrega:</strong> Recibe en tu domicilio</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- POLÍTICAS -->
+            <div class="card">
+                <span class="card-icon">📋</span>
+                <h2 class="card-title">Políticas Importantes</h2>
+                <div class="card-content">
+                    <ul class="styled-list">
+                        <li><strong>Cancelaciones:</strong> Solo dentro de las primeras 2 horas</li>
+                        <li><strong>Entregas:</strong> Los pedidos realizados a través de nuestra aplicación o sitio web serán procesados con la mayor diligencia posible. Los tiempos de entrega pueden variar según la ubicación y circunstancias externas,
+                             por lo que no nos hacemos responsables por retrasos fuera de nuestro control.</li>
+                        <li><strong>Datos:</strong> Protegidos bajo Ley 1581 de 2012</li>
+                        <li><strong>membresia premium</strong> Membresías Premium
+                            La suscripción a la membresía premium ofrece beneficios exclusivos, incluyendo asesoramiento personalizado. El acceso a estos servicios está condicionado al pago puntual y al cumplimiento de
+                             las políticas internas de la membresía.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN FINAL -->
+        <div class="final-section">
+            <h2>🤝 ¡Acepta y Disfruta!</h2>
+            <p>Al realizar una compra en www.tasteandtrain.com, aceptas automáticamente estos términos y condiciones.</p>
+            <a href="mailto:cliente@tasteandtrain.com" class="contact-link">
+                💌 Contáctanos
+            </a>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}
