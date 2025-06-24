@@ -1,4 +1,14 @@
 # CHANGELOG Fitness Restaurant Taste & Train
+---
+
+## [2.0.0] - Nicolás Bustamante - 2025 - 06 - 25
+## Changed
+
+- Cambie el metodo de base datos.
+
+## Added
+
+- Ejecución con método demonio.
 
 ---
 
