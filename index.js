@@ -30,15 +30,35 @@ app.get('/auth/facebook/callback',
     (req, res) =>{ res.redirect('/perfil_cliente'); }
 );
 
+
 // Traer las rutas
 const indexRoutes = require("./routes/index.routes");
 const loginRoutes = require("./routes/login.routes");
-const perfil_clienteRoutes = require("./routes/perfil_cliente.routes")
+const perfil_clienteRoutes = require("./routes/perfil_cliente.routes")  
 
 // Uso de las rutas
 app.use('/', indexRoutes);
 app.use('/login', loginRoutes);
 app.use("/perfil_cliente", perfil_clienteRoutes);
+
+// Enviar correo de bienvenida
+app.post('/login', async (req, res) => {
+    const { email, password } = req.body;
+  
+    // Aquí haces la lógica de autenticación...
+    const usuario = await User.findOne({ email });
+  
+    if (!usuario || !usuario.validPassword(password)) {
+      return res.status(401).json({ mensaje: 'Credenciales incorrectas' });
+    }
+  
+    // Si el login fue exitoso, envía el correo:
+    await enviarCorreo(usuario.email, usuario.nombre);
+  
+    // Continúa con la respuesta de login
+    res.json({ mensaje: 'Login exitoso', usuario });
+  });
+
 
 // 🚀 Iniciar el servidor
 const PORT = 8090;

@@ -1,4 +1,13 @@
 # CHANGELOG Fitness Restaurant Taste & Train
+
+---
+
+## [2.1.0] - Nicolás Bustamante - 2025 - 07 - 01
+### Added
+
+- Cambio en el index.
+- Se inicio el proceso para enviar el correo al loguearse.
+
 ---
 
 ## [2.0.0] - Nicolás Bustamante - 2025 - 06 - 25

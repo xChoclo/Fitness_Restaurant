@@ -1,5 +1,4 @@
 
-
 .swiper-button-prev::after{
     font-size: 25px;
 }
@@ -41,7 +40,7 @@
 
 .slider-txt h1{
     font-size: 70px;
-    color: var(--color-white);
+    color: var(--color-dark);
     text-transform: uppercase;
     font-weight: 800;
 }
@@ -58,8 +57,9 @@
 .btn-1{
     display: inline-block;
     padding: 15px;
-    border: 2px solid var(--color-danger);
-    color: var(--color-white);
+    background-color: var(--color-background-variant);
+    color: var(--color-danger);
+    box-shadow: var(--box-shadow-3D-textura);
     font-weight: 800;
     margin-right: 20px;
     text-transform: uppercase;
@@ -67,9 +67,8 @@
 }
 
 .btn-1:hover{
-    border: 2px solid var(--color-danger);
-    background-color: var(--color-danger);
-    color: var(--color-white);
+    background: var(--color-background-redondo);
+    box-shadow:  var(--box-shadow-3D-small);
 }
 .slider-img {
     width: 50%;
@@ -80,13 +79,13 @@
 }
 
 .products{
-    background-color: var(--color-dark);
+    background-color: var(--color-background);
 }
 
 .tabs{
     display: flex;
     flex-wrap: wrap;
-    padding: 100px 0px;   
+    padding: 50px 0px;   
 }
 
 .tabs label{
@@ -117,7 +116,7 @@
 
 .tabs input[type="radio"]:checked + label {
     border-bottom: 2px solid var(--color-danger);
-    color: var(--color-white);
+    color: var(--color-dark);
 }
 
 .tabs input[type="radio"]:checked + label + .tab{
@@ -141,11 +140,11 @@
     display: inline-block;
     padding: 5px 7px;
     line-height: 15px;
-    color: var(--color-white);
+    color: var(--color-dark);
     font-size: 14px;
     text-transform: uppercase;
     font-weight: 800;
-    border: 2px solid var(--color-white);
+    border: 2px solid var(--color-dark);
     border-radius: 10px;
     margin-bottom: 50px;
 }
@@ -162,7 +161,7 @@
 }
 
 .product-txt h4{
-    color: var(--color-white);
+    color: var(--color-dark);
     font-size: 14px;
     text-transform: uppercase;
     font-weight: 800;
@@ -175,13 +174,13 @@
     margin-bottom: 15px;
 }
 .product-txt span{
-    color: var(--color-white);
+    color: var(--color-dark);
     font-size: 18px;
     font-weight: 800;
 }
 
 .map{
-    filter: grayscale(100%) invert(92%) contrast(93%);
+    filter: grayscale(100%) invert(100%) contrast(93%);
 
 }
 @media (max-width: 991px) {
@@ -211,7 +210,7 @@
         top: 100%;
         left: 0;
         right: 0;
-        background-color: var(--color-background);
+        background-color: var(--color-dark);
         display: none;
     }
 
