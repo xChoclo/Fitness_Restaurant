@@ -1,4 +1,6 @@
-const enviarCorreo = require('./config/enviarCorreo');
+const enviarCorreo = require('../config/enviarCorreo');
+const express = require('express')
+const router = express.Router();
 
 exports.login = (req, res) => {
     res.render('login', {
@@ -9,7 +11,7 @@ exports.login = (req, res) => {
     });
 };
 
-app.post('/login', async (req, res) => {
+router.post('/login', async (req, res) => {
     const { email, password } = req.body;
   
     // Aquí haces la lógica de autenticación...
@@ -25,3 +27,5 @@ app.post('/login', async (req, res) => {
     // Continúa con la respuesta de login
     res.json({ mensaje: 'Login exitoso', usuario });
   });
+
+module.exports = router;

@@ -2,6 +2,13 @@
 
 ---
 
+## [2.1.1] - Nicolás Bustamante - 2025 - 07 - 08
+### Added
+
+- Agregué el chatbot a su propia página, solo falta meterlo en su sección de base.html.
+
+---
+
 ## [2.1.0] - Nicolás Bustamante - 2025 - 07 - 01
 ### Added
 
