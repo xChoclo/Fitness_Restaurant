@@ -1,82 +1,79 @@
-{% extends 'base.html' %}
-{% load static %}
-{% load humanize %}
-
-{% block extra_css %}
-<link rel="stylesheet" href="{% static 'CSS/styleMenu.css' %}">
-{% endblock %}
-
-{% block content %}
+<link rel="stylesheet" href="/CSS/styleMenu.css">
 
 <div class="wrapper">
+    <div class="tab-container">
+        <input type="radio" name="tab" id="tab1" class="tab tab--1" />
+        <label class="tab_label" for="tab1">Subir</label>
+
+        <input type="radio" name="tab" id="tab2" class="tab tab--2" />
+        <label class="tab_label" for="tab2">Mantener</label>
+
+        <input type="radio" name="tab" id="tab3" class="tab tab--3" />
+        <label class="tab_label" for="tab3">Bajar</label>
+
+        <div class="indicator"></div>
+    </div>
+
     <div class="menu-container">
-        {% for i in data %}
-            <div class="contenedoresPlatos">
+        <% data.forEach(i => { %>
+            <a href="#" class="contenedoresPlatos" data-id="<%= i.id %>">
                 <div class="imgs">
-                    {% if i.foto %}
-                        <img src="{{ i.foto.url }}" alt="{{ i.nombre }}">
-                    {% else %}
-                        <img src="{% static 'img/sin imagen.jpg' %}" alt="Sin imagen disponible">
-                    {% endif %}
-                </div>
-                <p class="nombrePlato">{{ i.nombre }}</p>
-                <div class="precio">
-                    <p >{{ i.precio|intcomma }}</p>
+                    <% if (i.foto) { %>
+                        <img src="<%= i.foto %>" alt="<%= i.nombre %>">
+                    <% } else { %>
+                        <img src="/img/sin imagen.jpg" alt="Sin imagen disponible">
+                    <% } %>
                 </div>
                 
-                <section class="infNutricional">
-                    <ul>
-                        <ul class="top">{{ i.kilocalorias }}</ul>
-                        <ul class="button">Kilocalorias</ul>
-                    </ul>
-                    <ul>
-                        <ul class="top">{{ i.proteinas }}</ul>
-                        <ul class="button">Proteinas</ul>
-                    </ul>
-                    <ul>
-                        <ul class="top">{{ i.kilocalorias }}</ul>
-                        <ul class="button">Carbohidratos</ul>
-                    </ul>
-                    <ul>
-                        <ul class="top">22g</ul>
-                        <ul class="button">Grasas</ul>
-                    </ul>
-                </section>
-                <button type="submit" class="buttonPlatos">¡Pedir!</button>
-            </div>
-        {% endfor %}
+                <div class="contenidoPlato">
+                    <p class="nombrePlato"><%= i.nombre %></p>
+                    <div class="precio">
+                        <p><%= i.precio.toLocaleString() %></p>
+                    </div>
+                    
+                    <section class="infNutricional">
+                        <ul>
+                            <ul class="top"><%= i.kilocalorias %></ul>
+                            <ul class="button">Kilocalorias</ul>
+                        </ul>
+                        <ul>
+                            <ul class="top"><%= i.proteinas %></ul>
+                            <ul class="button">Proteinas</ul>
+                        </ul>
+                        <ul>
+                            <ul class="top"><%= i.carbohidratos %></ul>
+                            <ul class="button">Carbohidratos</ul>
+                        </ul>
+                        <ul>
+                            <ul class="top"><%= i.grasas %></ul>
+                            <ul class="button">Grasas</ul>
+                        </ul>
+                    </section>
+                    <button type="submit" class="buttonPlatos">¡Pedir!</button>
+                </div>
+            </a>
+        <% }) %>
     </div>
 </div>
 
-<!-- Carrito de compras (oculto por defecto) -->
+<!-- Carrito -->
 <div id="cart-sidebar" class="cart-sidebar">
-    
-    <!-- Header del carrito -->
     <div class="headerCarrito">
         <button id="close-cart">&times;</button>
         <h2>Carrito</h2>
     </div>
-    
-    <!-- Contenido del carrito -->
-     <div class="contentCarrito">
-         <div id="cart-items" class="cart-items">
-             <!-- Productos -->
-         </div>
-     </div>
-
-    <!-- Footer del carrito -->
-     <div class="footerCarrito">
-         <div class="baseCheckout">
-             <button id="checkout" class="checkout">Finalizar Compra</button>
-         </div>
-     </div>
-    
+    <div class="contentCarrito">
+        <div id="cart-items" class="cart-items"></div>
+    </div>
+    <div class="footerCarrito">
+        <div class="baseCheckout">
+            <button id="checkout" class="checkout">Finalizar Compra</button>
+        </div>
+    </div>
 </div>
 
-<!-- Fondo desenfocado cuando se abre el carrito -->
 <div id="overlay" class="overlay"></div>
 
-<!-- Ventana de Confirmación -->
 <div id="confirm-modal" class="confirm-modal">
     <div class="parrafoConfirmación">
         <p>¿Seguro que quieres eliminar este plato?</p>
@@ -86,8 +83,3 @@
         <button id="confirm-no">No</button>
     </div>
 </div>
-
-
-    
-<script src="{% static 'JS/carrito_desplegable.js' %}"></script>
-{% endblock %}

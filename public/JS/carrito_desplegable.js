@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const plato = platoElement.querySelector(".nombrePlato").innerText;
             const precio = platoElement.querySelector(".precio p").innerText;
             const imagenSrc = platoElement.querySelector("img").src;
+            const platoId = platoElement.getAttribute("data-id");
 
             let existingItem = document.querySelector(`.cart-item[data-name="${plato}"]`);
 
@@ -28,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const newItem = document.createElement("div");
                 newItem.classList.add("cart-item");
                 newItem.setAttribute("data-name", plato);
+                newItem.setAttribute("data-id", platoId);
                 newItem.innerHTML = `
                     <img src="${imagenSrc}" alt="${plato}" class="cart-item-img">
                     <div class="cart-item-details">
@@ -93,9 +95,10 @@ document.addEventListener("DOMContentLoaded", function () {
             // Obtener los datos del carrito
             const cartItems = document.querySelectorAll(".cart-item");
             const carrito = Array.from(cartItems).map(item => ({
+                plato_id: item.getAttribute("data-id"),
                 nombre: item.querySelector(".cart-item-name").innerText,
-                cantidad: item.querySelector(".quantity").innerText,
-                precio: item.querySelector(".cart-item-price").innerText,
+                cantidad: parseInt(item.querySelector(".quantity").innerText),
+                precio: parseFloat(item.querySelector(".cart-item-price").innerText.replace(/[^0-9.-]+/g, ""))
             }));
 
             const total = carrito.reduce((sum, item) => {
@@ -103,11 +106,10 @@ document.addEventListener("DOMContentLoaded", function () {
             }, 0);
 
             // Enviar los datos al servidor
-            fetch("/crear_factura/", {
+            fetch("/factura/crear", {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json",
-                    "X-CSRFToken": getCookie("csrftoken"),
+                    "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
                     carrito: carrito,

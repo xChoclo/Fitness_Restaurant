@@ -2,6 +2,10 @@
 
 ---
 
+## [2.1.2] - Nicolás Bustamante - 2025 - 07 - 14
+- Agregue todo el backend y parte del frontend del menú, carrito y facturación.
+---
+
 ## [2.1.1] - Nicolás Bustamante - 2025 - 07 - 08
 - Agregué el chatbot a su propia página, solo falta meterlo en su sección de base.html.
 

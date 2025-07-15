@@ -1,7 +1,3 @@
-const exp = require('express');
-const router = exp.Router();
-const loginControlador = require('../controllers/login.controller');
+const loginRouter = require('../controllers/login.controller');
 
-router.get('/', loginControlador)
-
-module.exports = router;
+module.exports = loginRouter;

@@ -2,6 +2,13 @@
 
 ---
 
+## [2.1.2] - Nicolás Bustamante - 2025 - 07 - 14
+### Added
+
+- Agregue todo el backend y parte del frontend del menú, carrito y facturación.
+
+---
+
 ## [2.1.1] - Nicolás Bustamante - 2025 - 07 - 08
 ### Added
 

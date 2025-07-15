@@ -2,14 +2,15 @@ const enviarCorreo = require('../config/enviarCorreo');
 const express = require('express')
 const router = express.Router();
 
-exports.login = (req, res) => {
+// Ruta GET para mostrar el formulario de login
+router.get('/', (req, res) => {
     res.render('login', {
         layout: false,
         sesion_iniciada: req.session?.sesion_iniciada || false,
         rol_usuario: req.session?.rol_usuario || null,
         messages: []
     });
-};
+});
 
 router.post('/login', async (req, res) => {
     const { email, password } = req.body;
@@ -26,6 +27,6 @@ router.post('/login', async (req, res) => {
   
     // Continúa con la respuesta de login
     res.json({ mensaje: 'Login exitoso', usuario });
-  });
+});
 
 module.exports = router;
